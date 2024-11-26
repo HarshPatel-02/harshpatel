@@ -1,0 +1,728 @@
+<!-- <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $a=$_POST['name'];
+    $b=$_POST['email'];
+    $c=$_POST['msg'];
+    $d=$_POST['number'];
+    $date=date("d-m-Y");
+      $con = mysqli_connect("localhost", "id22239094_harshpatel2102", "Patoliya@018642", "id22239094_contactinfo");
+    $sql="insert into contact values(default,'$a','$b','$c','$d','$date')";
+    $run=mysqli_query($con,$sql) or  die("<script>alert('Something went wrong".mysqli_errno($con)."')</script>");
+    echo "<script>alert('Your Response is submitted');</script>";
+    
+    echo "<script>window.location.href ='index.php';</script>";
+    
+}
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Harsh Patel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            transition: background 0.2s linear, color 0.2s linear;
+            background-color: white;
+            color: black;
+        }
+
+        .navbar,
+        .navbar-brand,
+        .nav-link {
+            color: black;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section h2 {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .card-body {
+            color: black;
+        }
+
+        .card-body:hover {
+            background-color: #FFDEAD;
+            color: black;
+        }
+
+        .card img {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+        }
+
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        body.dark-mode .navbar,
+        body.dark-mode .navbar-brand,
+        body.dark-mode .nav-link {
+            color: white !important;
+        }
+
+        body.dark-mode .section {
+            color: white;
+        }
+
+        body.dark-mode .card {
+            border-color: #444;
+        }
+
+        body.dark-mode .card-body {
+            color: white;
+        }
+
+        body.dark-mode .education {
+            background-color: black;
+        }
+
+        body.dark-mode .card-body:hover {
+            background-color: #ff004f;
+            color: white;
+        }
+
+        body.dark-mode .tech:hover {
+            color: white;
+        }
+
+        body.dark-mode .navbar-toggler {
+            border-color: white;
+        }
+
+        @media (max-width: 767px) {
+            .card {
+                height: auto !important;
+            }
+
+            .card-body {
+                text-align: center;
+            }
+
+            .card-title {
+                font-size: 24px !important;
+            }
+
+            .card-text {
+                font-size: 16px !important;
+            }
+
+            .card img {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .checkbox-label {
+            background-color: #111;
+            width: 50px;
+            height: 26px;
+            border-radius: 50px;
+            position: relative;
+            padding: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fa-moon {
+            color: #f1c40f;
+        }
+
+        .fa-sun {
+            color: #f39c12;
+        }
+
+        .checkbox-label .ball {
+            background-color: #fff;
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            border-radius: 50%;
+            transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked+.checkbox-label .ball {
+            transform: translateX(24px);
+        }
+
+        .support {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .support a {
+            color: #292c35;
+            font-size: 32px;
+            backface-visibility: hidden;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .support a:hover {
+            transform: scale(1.1);
+        }
+
+        body.dark-mode .card-body {
+            color: white;
+            border-color: white;
+            border: 2px solid white;
+        }
+
+        body.dark-mode .education-title {
+            color: white;
+        }
+
+        .navbar-toggler-icon-dark {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Skill css*/
+        h1 {
+            color: white;
+            margin-left: 8%;
+            margin-top: 3%;
+            font-size: 45px;
+        }
+
+        .myskill {
+            width: 50%;
+            margin-left: 200px;
+            margin-right: 50px;
+        }
+
+        .language-name {
+            font-size: 22px;
+            font-family: Verdana;
+
+        }
+
+        .fulldiv {
+            background-color: whitesmoke;
+            height: 13px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 2px solid;
+        }
+
+        .fulldiv:hover,
+        .language-name:hover {
+
+            filter: drop-shadow(3px 3px 5px white);
+            transform: translateY(-20%);
+        }
+
+        .skill-progress {
+            background-color: #ff004f;
+            height: 100%;
+            color: white;
+            text-align: center;
+            font-weight: 800;
+            line-height: 20px;
+        }
+
+        .education {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .education-title {
+            display: block;
+            color: black;   
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .MCA {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            border-bottom: 2px solid #ff004f;
+            font-size: 18px;
+            display: inline-block;
+            padding: 20px 40px;
+            margin-right: 40px;
+            border-radius: 10px;
+        }
+
+        .MCA:hover {
+            background-color: #ff004f;
+        }
+
+        .MCA:hover span {
+            color: white;
+            /* Change color of text within span */
+        }
+
+
+
+        @media (max-width: 500px) {
+            .contact-form {
+                padding: 15px;
+            }
+
+            .contact-form h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 8px;
+            }
+
+            .submit-btn {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 767px) {
+            .myskill {
+                margin-left: 0;
+                margin-right: 0;
+                width: 100%;
+            }
+
+            .fulldiv,
+            .language-name {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar1"
+        style="background-color: black;color: white; position: sticky; top: 0; z-index: 1000;">
+        <div class="container">
+            <a class="navbar-brand" href="#">Harsh Patel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+          
+        </div>
+    </nav>
+
+    <!-- Sections -->
+    <div id="home" class="section">
+        <div class="container text-center">
+            <h1 class="label-nm" style="color: black;margin: auto;">Hello, I'm <span>Harsh Patel</span></h1>
+            <p>Full-stack Developer</p>
+            <a href="#contact" class="btn btn-primary btn-outline-light btn-primary"
+                style="width: 150px;border-radius: 200px;border: none;">Hire Me</a>
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi I am studying Master Of Computer Application in Marwadi University(NAAC A+).<br />
+                I am Highly Motivated MCA student eager to contribute towards organization through my knowledge, skills
+                and attitude.</p>
+        </div>
+    </div>
+
+    <div id="skills" class="section">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="myskill">
+
+                <div class="language-name">
+                    HTML
+                </div>
+                <div class="fulldiv">
+                    <div class="skill-progress" style="width: 90%;"></div>
+                </div>
+                
+                <span style="display: block; color: white;margin-left: 101%;margin-top: -20px;">90%</span>
+                <br /><br />
+                <div class="language-name">
+                    CSS
+                </div>
+                <div class="fulldiv">
+                    <div class="skill-progress" style="width: 80%;"></div>
+                </div>
+                <span style="display: block; color: white;margin-left: 101%;margin-top: -20px;">80%</span>
+
+                <br /><br />
+                <div class="language-name">
+                    JavaScript
+                </div>
+                <div class="fulldiv">
+                    <div class="skill-progress" style="width: 70%;"> </div>
+                </div>
+
+                <span style="display: block; color: white;margin-left: 101%;margin-top: -20px;">70%</span>
+                <br /><br />
+                <div class="language-name">
+                    SQL
+                </div>
+                <div class="fulldiv">
+                    <div class="skill-progress" style="width: 70%;"></div>
+                </div>
+
+                <span style="display: block; color: white;margin-left: 101%;margin-top: -20px;">70%</span>
+                <br /><br />
+                <div class="language-name">
+                    JAVA
+                </div>
+                <div class="fulldiv">
+                    <div class="skill-progress" style="width: 75%;"></div>
+                </div>
+                <span style="display: block; color: white;margin-left: 101%;margin-top: -20px;">75%</span>
+
+                <br /><br />
+                <div class="language-name">
+                    Android
+                </div>
+                <div class="fulldiv">
+                    <div class="skill-progress" style="width: 80%;"></div>
+                </div>
+                <span style="display: block; color: white;margin-left: 101%;margin-top: -20px;">80%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" style="text-align: center;color: white;">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="row justify-content-center" style="margin-top: 30px;">
+                <div class="col-md-4">
+                    <div style="text-align: center;color: white;">
+                        <div class="card-body">
+                            <i class="fas fa-laptop-code fa-5x mb-5"></i>
+                            <h5 class="card-title">Web Development</h5>
+                            <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                lacinia odio vitae vestibulum vestibulum.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="text-align: center;color: white;">
+                        <div class="card-body">
+                            <i class="fas fa-mobile-alt fa-5x mb-5"></i>
+                            <h5 class="card-title">Mobile Development</h5>
+                            <!-- <p class="card-text">Cras venenatis euismod malesuada. Nulla elementum libero nec nulla
+                                fermentum, vel vehicula turpis scelerisque.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <div id="projects" class="section">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="container-fluid mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="card position"
+                            style="box-shadow:15px 15px 15px black;border: 2px solid black; background-color:transparent; border-radius:30px">
+                            <div class="card-body" style="border-radius:30px">
+                                <div style="text-align: center;">
+                                    <img src="Images/carparking.png" class="img-fluid" alt="Cargo Car Parking" />
+                                    <b>
+                                        <p class="card-title" style="font-size:30px; text-align: center;">Cargo Car
+                                            Parking (GitHub)</p>
+                                    </b>
+                                </div>
+                                <div>
+                                    <p class="card-text" style="font-family:Verdana;font-size: larger;">- Created an
+                                        interactive system in PHP that allows users to book slots for their cars and
+                                        check the parking and booking status online. <br />
+                                        <b><b>Technology Used :</b></b> HTML, CSS, JavaScript <br />
+                                        <b><b>Databases:</b></b></b> MySQL
+                                        <br /><br />
+                                        <a href="https://github.com/HarshPatel-02/Project/tree/main/Cargo%20Car%20Parking"
+                                            style="text-decoration: none;">
+                                            <input type="button" class="btn btn-warning btn-outline-light btn-danger"
+                                                value="View on GitHub"
+                                                style="display: flex; margin: auto; border-radius: 15px;border: 2px solid white;" />
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="card position"
+                            style="box-shadow:15px 15px 15px black;border: 2px solid black; background-color:transparent; border-radius:30px">
+                            <div class="card-body" style="border-radius:30px">
+                                <div style="text-align: center;">
+                                    <img src="Images/laptopselling (1).png" class="img-fluid"
+                                        alt="Online Laptop Selling" />
+                                    <b>
+                                        <p class="card-title" style="font-size:30px; text-align: center;">Online Laptop
+                                            Selling (GitHub)</p>
+                                    </b>
+                                </div>
+                                <div>
+                                    <p class="card-text" style="font-family:Verdana;font-size: larger;">- Created an
+                                        E-commerce website in Asp.Net that allows users to buy and see product bills and
+                                        give valuable feedback.<br />
+                                        <b><b>Technology Used :</b></b> Asp.Net<br />
+                                        <b><b>Databases:</b></b> SQL Server
+                                        <br /><br />
+                                        <a href="https://github.com/HarshPatel-02/Project/tree/main/FutureTech"
+                                            style="text-decoration: none;">
+                                            <input type="button" class="btn btn-warning btn-outline-light btn-danger"
+                                                value="View on GitHub"
+                                                style="display: flex; margin: auto; border-radius: 15px;border: 2px solid white;" />
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="card position"
+                            style="box-shadow:15px 15px 15px black;border: 2px solid black;; background-color:transparent; border-radius:30px">
+                            <div class="card-body" style="border-radius:30px">
+                                <div style="text-align: center;">
+                                    <img src="Images/ChitChat.png" class="img-fluid" alt="Online Laptop Selling" />
+                                    <b>
+                                        <p class="card-title" style="font-size:30px; text-align: center;">Social Media
+                                            App (GitHub)</p>
+                                    </b>
+                                </div>
+                                <div>
+                                    <p class="card-text" style="font-family:Verdana;font-size: larger;">- Social Media
+                                        App that allows users to post images and chat with friends.<br />
+                                        <b><b>Technology Used :</b></b> Android, Java<br />
+                                        <b><b>Databases:</b></b> Firebase
+                                        <br /><br />
+                                        <a href="https://github.com/HarshPatel-02/Chit_Chat"
+                                            style="text-decoration: none;">
+                                            <input type="button" class="btn btn-warning btn-outline-light btn-danger"
+                                                value="View on GitHub"
+                                                style="display: flex; margin: auto; border-radius: 15px;border:2px solid white;" />
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="education" class="section">
+        <div class="container">
+            <div class="education">
+
+                <span class="education-title">Education</span>
+                <br /><br />
+                <div class="MCA">
+                    <span style="color: #ff004f;">MCA</span>
+                    <br />
+                    <span style="font-size: 20px;font-family: Verdana;">Marawadi University,</span>
+                    <br />
+                    <span style="font-size: 20px;font-family: Verdana;">Rajkot.</span>
+                    <br /><br />
+                    <span style="font-size: 15px;">Present<br />2023-2025</span>
+                </div>
+
+                <div class="MCA">
+                    <span style="color: #ff004f;">BCA</span>
+                    <br />
+                    <span style="font-size: 20px;font-family: Verdana;">R.P.Bhalodia College,</span>
+                    <br />
+                    <span style="font-size: 20px;font-family: Verdana;">Rajkot.</span>
+                    <br /><br />
+                    <span style="font-size: 15px;">CGPA : 6.49<br />2021-2023</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="section text-center">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="d-flex justify-content-center">
+                <a href="#"><img src="Images/insta.png" class="me-2 mb-2 mb-md-0" style="height: 50px;width:50px;"></a>
+                <a href="https://github.com/HarshPatel-02"><img src="Images/github.png" class="me-2 mb-2 mb-md-0"
+                        style="height: 50px;width:50px;"></a>
+                <a href="http://www.linkedin.com/in/harsh-patel-9b638a262"><img src="Images/linkdin.png"
+                        class="me-2 mb-2 mb-md-0" style="height: 50px;width: 50px;"></a>
+                <a href="mailto:harshpatel02102@gmail.com?"><img src="Images/gmail.png" class="me-2 mb-2 mb-md-0"
+                        style="height:60px;width:60px;"></a>
+            </div>
+            <br><br>
+            <div class="contact-form" id="contactform">
+                <h2>Contact Form</h2>
+                <form action="index.php" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label class="label-nm" for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label class="label-nm" for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label class="label-nm" for="mobile">Mobile</label>
+                        <input type="tel" id="mobile" name="number" class="form-control"
+                            placeholder="Your Mobile Number">
+                    </div>
+                    <div class="form-group">
+                        <label class="label-nm" for="message">Message</label>
+                        <textarea id="message" name="msg" class="form-control" rows="5"
+                            placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <p>&copy; Harsh Patel | All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            function applyDarkMode() {
+                const checkbox = document.getElementById("checkbox");
+                const navbar = document.querySelector(".navbar");
+                const navLinks = document.querySelectorAll(".nav-link");
+                const form = document.getElementById("contactform");
+                const formLabels = document.querySelectorAll(".label-nm");
+
+                // Toggle dark mode class on body
+                document.body.classList.toggle("dark-mode");
+
+                // Apply styles based on dark mode state
+                if (document.body.classList.contains("dark-mode")) {
+                    navbar.style.backgroundColor = "black";
+                    navLinks.forEach(link => link.style.color = "white");
+                    form.style.backgroundColor = "black";
+                    form.style.border = "1px solid white";
+                    formLabels.forEach(label => label.style.color = "white");
+                } else {
+                    navbar.style.backgroundColor = "black"; // Adjust as per your light mode
+                    navLinks.forEach(link => link.style.color = "white");
+                    form.style.backgroundColor = "white";
+                    form.style.border = "1px solid black"; // Adjust as per your light mode
+                    formLabels.forEach(label => label.style.color = "black");
+                }
+
+                // Update checkbox state based on body class
+                checkbox.checked = document.body.classList.contains("dark-mode");
+            }
+
+            // Call applyDarkMode function on page load
+            window.onload = function () {
+                applyDarkMode();
+
+                // Listen for checkbox change
+                const checkbox = document.getElementById("checkbox");
+                checkbox.addEventListener("change", applyDarkMode);
+            };
+        });
+    </script>
+</body>
+
+</html>
