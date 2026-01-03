@@ -1,15 +1,16 @@
 !DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The portfolio of Harsh Patel, a Machine Learning Engineer and Python Developer.">
     <title>Harsh Patel / ML Engineer & Python Developer</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
         :root {
@@ -22,51 +23,64 @@
             --font-family: 'Inter', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         /* NEW: Preloader Styles */
-    .preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: var(--bg-color); /* Uses the same black background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999; /* Ensures it's on top of everything */
-        transition: opacity 0.5s ease, visibility 0.5s ease; /* For the fade-out effect */
-    }
-
-    .preloader-logo {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--text-primary);
-        animation: pulse-loader 1.5s infinite ease-in-out;
-    }
-
-    .preloader.hidden {
-        opacity: 0;
-        visibility: hidden; /* Hides it from screen readers and interaction */
-    }
-
-    @keyframes pulse-loader {
-        0% {
-            opacity: 0.5;
-            transform: scale(0.95);
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--bg-color);
+            /* Uses the same black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            /* Ensures it's on top of everything */
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            /* For the fade-out effect */
         }
-        50% {
-            opacity: 1;
-            transform: scale(1);
+
+        .preloader-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            animation: pulse-loader 1.5s infinite ease-in-out;
         }
-        100% {
-            opacity: 0.5;
-            transform: scale(0.95);
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            /* Hides it from screen readers and interaction */
         }
-    }
+
+        @keyframes pulse-loader {
+            0% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+        }
 
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background-color: var(--bg-color);
@@ -77,7 +91,7 @@
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
-        
+
         /* --- Spotlight Cursor Effect --- */
         .spotlight {
             position: fixed;
@@ -93,17 +107,46 @@
             transition: width 0.3s, height 0.3s, background 0.3s;
         }
 
-        .container { max-width: 1024px; margin: 0 auto; padding: 0 1.5rem; }
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
-        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
-        h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.5rem; margin-bottom: 3rem; }
-        h3 { font-size: 1.25rem; }
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
 
-        p { color: var(--text-secondary); margin-bottom: 1rem; }
-        section { padding: 7rem 0; }
-        a { color: var(--text-primary); text-decoration: none; }
-        
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        section {
+            padding: 7rem 0;
+        }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
         /* --- Navigation --- */
         .navbar {
             position: fixed;
@@ -116,34 +159,157 @@
             padding: 1rem 0;
             z-index: 1000;
         }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 700; font-size: 1.25rem; }
-        .nav-links a { margin: 0 1rem; font-weight: 500; font-size: 0.9rem; color: var(--text-secondary); transition: color 0.3s; }
-        .nav-links a:hover { color: var(--text-primary); }
-        
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .nav-links a {
+            margin: 0 1rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
         /* NEW: Hamburger Menu Icon */
-        .hamburger { display: none; cursor: pointer; }
-        .hamburger .bar { display: block; width: 25px; height: 3px; margin: 5px auto; transition: all 0.3s ease-in-out; background-color: var(--text-primary); border-radius: 2px; }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--text-primary);
+            border-radius: 2px;
+        }
 
         /* ... (The rest of the styles remain largely the same, with media queries added at the bottom) ... */
-        #hero { min-height: 100vh; display: flex; align-items: center; text-align: center; }
-        #hero h1 { background: linear-gradient(90deg, #E0E0E0, #FFFFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; }
-        #hero p { max-width: 600px; margin: 0 auto 2rem auto; font-size: 1.125rem; }
-        .status { display: inline-flex; align-items: center; gap: 0.5rem; background-color: rgba(45, 212, 191, 0.1); color: #5EEAD4; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 500; margin-bottom: 1rem; }
-        .status-indicator { width: 8px; height: 8px; background-color: #5EEAD4; border-radius: 50%; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); } }
-        
-        .glass-card { background: var(--primary-glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
-        .glass-card:hover { transform: translateY(-5px); }
-        .glass-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 12px; border: 2px solid transparent; background: var(--accent-gradient) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: destination-out; mask-composite: exclude; opacity: 0; transition: opacity 0.3s; }
-        .glass-card:hover::before { opacity: 1; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .service-card .icon { font-size: 1.75rem; margin-bottom: 1.5rem; }
-        .service-card h3 { margin-bottom: 0.75rem; }
- /* --- NEW: Case Study Project Section Styles --- */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        #hero h1 {
+            background: linear-gradient(90deg, #E0E0E0, #FFFFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        #hero p {
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.125rem;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(45, 212, 191, 0.1);
+            color: #5EEAD4;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #5EEAD4;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(45, 212, 191, 0);
+            }
+        }
+
+        .glass-card {
+            background: var(--primary-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            background: var(--accent-gradient) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card .icon {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        /* --- NEW: Case Study Project Section Styles --- */
         .project-list {
             border-top: 1px solid var(--border-color);
         }
+
         .project-item {
             display: flex;
             justify-content: space-between;
@@ -153,12 +319,15 @@
             border-bottom: 1px solid var(--border-color);
             transition: background-color 0.3s;
         }
+
         .project-item:hover {
             background-color: rgba(255, 255, 255, 0.02);
         }
+
         .project-info {
             flex: 1;
         }
+
         .project-info h3 .arrow {
             display: inline-block;
             margin-left: 0.5rem;
@@ -166,19 +335,24 @@
             transform: translateX(-10px);
             transition: opacity 0.3s, transform 0.3s;
         }
+
         .project-item:hover .project-info h3 .arrow {
             opacity: 1;
             transform: translateX(0);
         }
+
         .project-info p {
-            max-width: 600px; /* Constrain description width */
+            max-width: 600px;
+            /* Constrain description width */
         }
+
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
         }
+
         .project-tags span {
             background: rgba(255, 255, 255, 0.1);
             color: var(--text-primary);
@@ -187,6 +361,14 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
+        button{
+            
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
         .project-thumbnail {
             width: 200px;
             height: 120px;
@@ -195,34 +377,150 @@
             border: 1px solid var(--border-color);
             transition: transform 0.3s, filter 0.3s;
         }
+
         .project-item:hover .project-thumbnail {
             transform: scale(1.05);
             filter: brightness(1.1);
-        }  /* ... (Footer, Scroll-to-top, Responsive styles are the same, with one tweak for project responsive) ... */
-        footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; }
-        .footer-links a { margin: 0 1rem; font-weight: 500; color: var(--text-secondary); }
-        .footer-links a:hover { color: var(--text-primary); }
-        .scroll-to-top { position: fixed; bottom: 20px; right: 20px; background-color: var(--primary-glass); backdrop-filter: blur(10px); border: 1px solid var(--border-color); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--text-secondary); opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; z-index: 999; }
-        .scroll-to-top:hover { color: var(--text-primary); transform: translateY(-2px); border-color: var(--text-primary); }
-        .scroll-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
-            .spotlight { display: none; }
-            .hamburger { display: block; z-index: 1001; }
-            .nav-links { position: fixed; left: -100%; top: 0; flex-direction: column; justify-content: center; gap: 2rem; background: var(--bg-color); width: 100%; height: 100vh; text-align: center; transition: 0.3s; }
-            .nav-links.active { left: 0; }
-            .nav-links a { font-size: 1.2rem; }
-            .hamburger.active .bar:nth-child(2) { opacity: 0; }
-            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-            .timeline::after { left: 20px; }
-            .timeline-item { padding: 1rem 1rem 1rem 3rem; }
-            /* Responsive Project List */
-            .project-item { flex-direction: column; align-items: flex-start; }
-            .project-thumbnail { width: 100%; height: auto; max-height: 200px; margin-top: 1.5rem; }
         }
+
+        /* ... (Footer, Scroll-to-top, Responsive styles are the same, with one tweak for project responsive) ... */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-to-top:hover {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            border-color: var(--text-primary);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .spotlight {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                background: var(--bg-color);
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding: 1rem 1rem 1rem 3rem;
+            }
+
+            /* Responsive Project List */
+            .project-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-thumbnail {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                margin-top: 1.5rem;
+            }
+        }
+
         /* NEW: Scroll to Top Button */
         .scroll-to-top {
             position: fixed;
@@ -245,25 +543,37 @@
             transition: all 0.3s ease;
             z-index: 999;
         }
+
         .scroll-to-top:hover {
             color: var(--text-primary);
             transform: translateY(-2px);
             border-color: var(--text-primary);
         }
+
         .scroll-to-top.visible {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-         /* --- NEW: Education Timeline Section Styles --- */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- NEW: Education Timeline Section Styles --- */
         .timeline {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
         }
+
         .timeline::after {
             content: '';
             position: absolute;
@@ -274,11 +584,13 @@
             left: 20px;
             margin-left: -1px;
         }
+
         .timeline-item {
             padding: 1rem 3rem;
             position: relative;
             background-color: inherit;
         }
+
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -293,35 +605,52 @@
             margin-left: -8px;
             transition: border-color 0.3s;
         }
+
         .timeline-item:hover::after {
             border-color: var(--text-primary);
         }
+
         .timeline-content {
             padding: 1rem 1.5rem;
             position: relative;
             border-radius: 8px;
         }
+
         .timeline-date {
             font-weight: 500;
             color: var(--text-secondary);
             margin-bottom: 0.5rem;
         }
+
         .timeline-content h3 {
             margin-bottom: 0.5rem;
         }
+
         .timeline-content p {
             margin-bottom: 0;
         }
-        
-        
+
+
         /* --- ALL RESPONSIVE STYLES --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .spotlight { display: none; }
-            
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .spotlight {
+                display: none;
+            }
+
             /* Responsive Navigation */
-            .hamburger { display: block; z-index: 1001; }
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
             .nav-links {
                 position: fixed;
                 left: -100%;
@@ -335,28 +664,64 @@
                 text-align: center;
                 transition: 0.3s;
             }
-            .nav-links.active { left: 0; }
-            .nav-links a { font-size: 1.2rem; }
 
-            .hamburger.active .bar:nth-child(2) { opacity: 0; }
-            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
 
             /* Responsive Projects */
-            .project-item, .project-item:nth-child(odd), .project-item:nth-child(even) { display: flex; flex-direction: column; }
-            .project-image-container { order: 1; margin-bottom: 1.5rem; }
-            .project-content { order: 2; text-align: left !important; }
-            .project-item:nth-child(even) .project-tags { justify-content: flex-start; }
-            .project-links a, .project-item:nth-child(even) .project-links a { margin-left: 0; margin-right: 1rem; }
+            .project-item,
+            .project-item:nth-child(odd),
+            .project-item:nth-child(even) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .project-image-container {
+                order: 1;
+                margin-bottom: 1.5rem;
+            }
+
+            .project-content {
+                order: 2;
+                text-align: left !important;
+            }
+
+            .project-item:nth-child(even) .project-tags {
+                justify-content: flex-start;
+            }
+
+            .project-links a,
+            .project-item:nth-child(even) .project-links a {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
-        <!-- NEW: Preloader HTML -->
+    <!-- NEW: Preloader HTML -->
     <div class="preloader">
         <div class="preloader-logo">HP</div> <!-- TODO: Your Initials -->
     </div>
-   
+
     <div class="spotlight"></div>
 
     <nav class="navbar">
@@ -364,9 +729,9 @@
             <a href="#" class="nav-logo">Harsh Patel</a> <!-- TODO: Your Initials -->
             <div class="nav-links">
                 <a href="#about">About</a>
-                 <a href="#experience">Experience</a>
+                <a href="#experience">Experience</a>
                 <a href="#education">Education</a> <!-- UPDATED NAV -->
-               <a href="#projects">Work</a>
+                <a href="#projects">Work</a>
                 <a href="mailto:patelharsh02102@gmail.com">Contact</a>
             </div>
             <!-- NEW: Hamburger HTML -->
@@ -385,61 +750,105 @@
                 Available for new opportunities
             </div>
             <h1>Harsh Patel, Machine Learning Engineer</h1> <!-- TODO: Your Name & Title -->
-            <p>I build intelligent, data-driven applications from prototype to production, specializing in Natural Language Processing and scalable system architecture.</p>
+            <p>I build intelligent, data-driven applications from prototype to production, specializing in Natural
+                Language Processing and scalable system architecture.</p>
             <div class="footer-links">
                 <a href="https://github.com/HarshPatel-02" target="_blank" aria-label="GitHub">GitHub</a>
-                <a href="https://www.linkedin.com/in/harsh-patel-9b638a262" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/harsh-patel-9b638a262" target="_blank"
+                    aria-label="LinkedIn">LinkedIn</a>
                 <a href="mailto:patelharsh02102@gmail.com" target="_blank" aria-label="Gmail">Gmail</a>
             </div>
         </div>
     </section>
-   
+
     <!-- ... (About and Projects sections remain the same) ... -->
     <section id="about">
         <div class="container services-grid">
-            <div class="service-card glass-card reveal"><div class="icon"><i class="fas fa-brain"></i></div><h3>ML Modeling & Research</h3><p>Developing high-performance models using PyTorch & TensorFlow for NLP, computer vision, and predictive analytics.</p></div>
-            <div class="service-card glass-card reveal"><div class="icon"><i class="fas fa-cogs"></i></div><h3>MLOps & Deployment</h3><p>Architecting scalable, production-ready ML systems using Docker, Kubernetes, and cloud platforms like AWS SageMaker.</p></div>
-            <div class="service-card glass-card reveal"><div class="icon"><i class="fas fa-code"></i></div><h3>Full-Stack Python</h3><p>Building performant backend APIs with FastAPI & Flask, and integrating them with modern frontend frameworks.</p></div>
+            <div class="service-card glass-card reveal">
+                <div class="icon"><i class="fas fa-brain"></i></div>
+                <h3>ML Modeling & Research</h3>
+                <p>Developing high-performance models using PyTorch & TensorFlow for NLP, computer vision, and
+                    predictive analytics.</p>
+            </div>
+            <div class="service-card glass-card reveal">
+                <div class="icon"><i class="fas fa-cogs"></i></div>
+                <h3>MLOps & Deployment</h3>
+                <p>Architecting scalable, production-ready ML systems using Docker, Kubernetes, and cloud platforms like
+                    AWS SageMaker.</p>
+            </div>
+            <div class="service-card glass-card reveal">
+                <div class="icon"><i class="fas fa-code"></i></div>
+                <h3>Full-Stack Python</h3>
+                <p>Building performant backend APIs with FastAPI & Flask, and integrating them with modern frontend
+                    frameworks.</p>
+            </div>
         </div>
     </section>
 
-     <!-- Experience -->
-<!-- Experience -->
-<section id="experience">
-  <div class="container">
-    <h2 class="reveal">Experience</h2>
-    <div class="timeline">
-      
-      <!-- Experience Item 1 -->
-      <div class="timeline-item reveal">
-        <div class="timeline-content glass-card">
-          <p class="timeline-date">Jan - July 2024</p>
-          <h3>Flutter Developer</h3>
-          <h4 class="company-name">Meetmighty It Solutions</h4>
-          <div class="project-tags">
+    <!-- Experience -->
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="reveal">Experience</h2>
+            <div class="timeline">
+
+                <!-- Experience Item 1 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content glass-card">
+                        <p class="timeline-date">Jan - July 2024</p>
+                        <h3>Flutter Developer</h3>
+                        <h4 class="company-name">Meetmighty It Solutions</h4>
+                        <div class="project-tags">
                             <span>Dart</span><span>Flutter</span><span>SQLite</span><span>Firebase</span>
                         </div>
-          <!-- <p>Specialization in Artificial Intelligence. Thesis on few-shot learning techniques for text classification.</p> -->
+                        <!-- <p>Specialization in Artificial Intelligence. Thesis on few-shot learning techniques for text classification.</p> -->
+                    </div>
+                </div>
+
+                <!-- Add more items for certifications or roles here -->
+
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Add more items for certifications or roles here -->
-      
-    </div>
-  </div>
-</section>
-
-       <!-- NEW: Case Study Project Section HTML -->
+    <!-- NEW: Case Study Project Section HTML -->
     <section id="projects">
         <div class="container">
             <h2 class="reveal">Selected Projects</h2>
             <div class="project-list">
 
+                <!-- TODO: Project 5 -->
+                <a href="https://github.com/HarshPatel-02/Machine_Learning" target="_blank" class="project-item reveal">
+                    <div class="project-info">
+                        <h3>Crop Recommendation System using Machine Learning & Flask<span class="arrow">→</span></h3>
+                     
+                        <p>Developed and deployed an end-to-end Machine Learning-based Crop Recommendation System that
+                            helps farmers choose the most suitable crop based on soil and climatic conditions.
+                            </p>
+                           <p> The system takes 7 crucial parameters as input:</p>
+                         <p>   Nitrogen • Phosphorus • Potassium • Temperature • Humidity • pH • Rainfall</p>
+                          <p>  → processes them through a highly accurate ML classification model</p>
+                           <p> → and instantly recommends the best crop (Rice, Maize, Jute, Cotton, Banana, etc.).
+                        </p>
+                        <div class="project-tags">
+                            <span>Python</span><span>Flask</span><span>Scikit-learn</span><span>NumPy</span><span>Pandas</span><span>Pickle</span><span>HTML</span><span>CSS</span><span>Gunicorn</span><span>Render</span><span>Git & GitHub</span>
+                           
+                        </div>
+                        <br>
+                     
+                            <button onclick="window.open('https://machine-learning-jc78.onrender.com/', '_blank')" class="project-tags">View Live Project</button>
+                    
+                    </div>
+                    
+                    <img src="Images/crop.png" alt="Semantic Search API Thumbnail" class="project-thumbnail">
+                </a>
+
                 <!-- TODO: Project 1 -->
-                <a href="#" target="_blank" class="project-item reveal">
+                <a href="https://github.com/HarshPatel-02/My-Flutter-Projects" target="_blank" class="project-item reveal">
                     <div class="project-info">
                         <h3>Decoze - Home Decor Application <span class="arrow">→</span></h3>
-                        <p>The Home Decor project aims to provide an interactive and user-friendly platform where users can explore and purchase home decor items.</p>
+                        <p>The Home Decor project aims to provide an interactive and user-friendly platform where users
+                            can explore and purchase home decor items.</p>
                         <div class="project-tags">
                             <span>Dart</span><span>Flutter</span><span>SQLite</span>
                         </div>
@@ -448,7 +857,7 @@
                 </a>
 
                 <!-- TODO: Project 2 -->
-                <a href="#" target="_blank" class="project-item reveal">
+                <a href="https://github.com/HarshPatel-02/Chit_Chat" target="_blank" class="project-item reveal">
                     <div class="project-info">
                         <h3>Social Media Application <span class="arrow">→</span></h3>
                         <p>Social Media App that allows users to post images and chat with friends.</p>
@@ -458,24 +867,27 @@
                     </div>
                     <img src="Images/ChitChat.png" alt="Anomaly Detection System Thumbnail" class="project-thumbnail">
                 </a>
-                
+
                 <!-- TODO: Project 3 -->
-                <a href="#" target="_blank" class="project-item reveal">
+                <a href="https://github.com/HarshPatel-02/Project/tree/main/FutureTech" target="_blank" class="project-item reveal">
                     <div class="project-info">
                         <h3>Online Laptop Selling <span class="arrow">→</span></h3>
-                        <p>Created an E-commerce website in Asp.Net that allows users to buy and see product bills and give valuable feedback.</p>
+                        <p>Created an E-commerce website in Asp.Net that allows users to buy and see product bills and
+                            give valuable feedback.</p>
                         <div class="project-tags">
                             <span>Asp.Net</span><span>SQL Server</span>
                         </div>
                     </div>
-                    <img src="Images/laptopselling (1).png" alt="Anomaly Detection System Thumbnail" class="project-thumbnail">
+                    <img src="Images/laptopselling (1).png" alt="Anomaly Detection System Thumbnail"
+                        class="project-thumbnail">
                 </a>
 
                 <!-- TODO: Project 4 -->
-                <a href="#" target="_blank" class="project-item reveal">
+                <a href="https://github.com/HarshPatel-02/Project/tree/main/Cargo%20Car%20Parking" target="_blank" class="project-item reveal">
                     <div class="project-info">
                         <h3>Cargo Car Parking <span class="arrow">→</span></h3>
-                        <p>Created an interactive system in PHP that allows users to book slots for their cars and check the parking and booking status online.</p>
+                        <p>Created an interactive system in PHP that allows users to book slots for their cars and check
+                            the parking and booking status online.</p>
                         <div class="project-tags">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>MySQL</span>
                         </div>
@@ -485,7 +897,7 @@
             </div>
         </div>
     </section>
-      <!-- NEW: Education Section -->
+    <!-- NEW: Education Section -->
     <section id="education">
         <div class="container">
             <h2 class="reveal">Education & Credentials</h2>
@@ -510,7 +922,7 @@
                         <!-- <p>Graduated with high honors. Captain of the university's Kaggle competition team.</p> -->
                     </div>
                 </div>
-                 <!-- TODO: Add more items for certifications if you have them -->
+                <!-- TODO: Add more items for certifications if you have them -->
             </div>
         </div>
     </section>
@@ -518,8 +930,13 @@
         <div class="container reveal">
             <h3>Let's build something great.</h3>
             <p>Feel free to reach out if you're looking for a developer or just want to connect.</p>
-            <a href="mailto:patelharsh02102@gmail.com" style="font-size: 1.25rem; font-weight: 600; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">patelharsh02102@gmail.com</a>
-            <div class="footer-links" style="margin-top: 2rem;"><a href="https://github.com/HarshPatel-02" target="_blank" aria-label="GitHub">GitHub</a><a href="https://www.linkedin.com/in/harsh-patel-9b638a262" target="_blank" aria-label="LinkedIn">LinkedIn</a><a href="mailto:patelharsh02102@gmail.com" target="_blank" aria-label="Gmail">Gmail</a></div>
+            <a href="mailto:patelharsh02102@gmail.com"
+                style="font-size: 1.25rem; font-weight: 600; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">patelharsh02102@gmail.com</a>
+            <div class="footer-links" style="margin-top: 2rem;"><a href="https://github.com/HarshPatel-02"
+                    target="_blank" aria-label="GitHub">GitHub</a><a
+                    href="https://www.linkedin.com/in/harsh-patel-9b638a262" target="_blank"
+                    aria-label="LinkedIn">LinkedIn</a><a href="mailto:patelharsh02102@gmail.com" target="_blank"
+                    aria-label="Gmail">Gmail</a></div>
         </div>
     </footer>
 
@@ -539,7 +956,7 @@
                     spotlight.style.top = `${e.clientY}px`;
                 });
             }
-             // --- Preloader ---
+            // --- Preloader ---
             const preloader = document.querySelector('.preloader');
             window.addEventListener('load', () => {
                 setTimeout(() => { preloader.classList.add('hidden'); }, 100);
@@ -590,7 +1007,5 @@
         });
     </script>
 </body>
+
 </html>
-
-
-
