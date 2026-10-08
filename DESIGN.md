@@ -199,7 +199,7 @@ A near-black room (#0a0a12) washed by three soft, out-of-focus light fields (vio
 
 Density is calm and editorial. Content sits in a 1200px column with generous section spacing, large Sora headlines tracked tight, and Manrope body copy in a soft grey that reserves near-white for headings and emphasis. The signature object is the hero "app window": a glass stage with window chrome (three tinted dots, a mono path title, a pill tag), a perspective grid floor, a canvas particle robot and three floating glass skill chips.
 
-Motion is soft and physical: content rises and un-blurs into place on scroll, cards lift on intent, project logos tilt, links draw their underline, and the primary button passes a band of light across itself. Everything respects reduced motion.
+Motion is soft and physical: the finance-agent workflow runs step by step while it is on screen, content rises and un-blurs into place on scroll, cards lift on intent, project logos tilt, links draw their underline, and the primary button passes a band of light across itself. Everything respects reduced motion.
 
 **Key Characteristics:**
 - Dark glass on #0a0a12 under soft violet / blue / pink light fields.
@@ -214,7 +214,7 @@ Motion is soft and physical: content rises and un-blurs into place on scroll, ca
 A cool near-black ground lit by tinted light, with one saturated violet as the only solid accent.
 
 ### Primary
-- **Signal Violet** (`signal-violet`): the one solid accent fill. Primary buttons ("Hire me", "View my work", "Send message"), the active project-filter pill, the role badge, the "Answer" node of the request-flow diagram, the 2px scroll progress bar, the back-to-top button on hover, and a service glyph square while its card is hovered. Darkens to **Pressed Violet** (`signal-violet-pressed`) on button hover. Its translucent forms carry state: 16% fill with a 55% border for monogram squares, 18% fill with a 55% soft-violet border for hovered chips, and 55–80% for the card glow and logo drop-shadow.
+- **Signal Violet** (`signal-violet`): the one solid accent fill. Primary buttons ("Hire me", "View my work", "Send message"), the active project-filter pill, the role badge, the finished "Answer" node of the finance-agent workflow, the 2px scroll progress bar, the back-to-top button on hover, and a service glyph square while its card is hovered. Darkens to **Pressed Violet** (`signal-violet-pressed`) on button hover. Its translucent forms carry state: 16% fill with a 55% border for monogram squares, 18% fill with a 55% soft-violet border for hovered chips, and 55–80% for the card glow and logo drop-shadow.
 - **Soft Violet** (`soft-violet`): a voice, not a fill. The highlighted headline phrase ("AI agents"), the HP logo stroke, monogram letters on education cards, the email link underline, and (at 38%) the border of a lifted card.
 
 ### Secondary
@@ -327,7 +327,7 @@ Confident and flat; the light does the talking.
 Plain dark glass, no coloured art panel. A 6.5rem top strip lays out side by side: the project's own transparent logo floating at 4rem on the left with a violet drop-shadow, the status badge on the right. A hairline separates the body: Sora title, three-line clamped description, muted tech line, then text links pinned to the bottom. On hover the card lifts and the logo scales to 108% and tilts -4 degrees.
 
 ### Featured Project Panel
-A wide glass panel: the left stage holds a vertical request-flow diagram (Question, Agent, Retriever + Tools, Answer) built from 14px night-ink nodes with 20% hairline outlines joined by 1px lines; only the Answer node is solid Signal Violet. The right body carries a static status badge, the large title, a three-column fact row divided by hairlines, tags and a muted private-code note.
+A wide glass panel. The left stage is a dotted canvas holding a live workflow of the finance agent: a mono window header ("finance-agent · FastAPI") with a Run pill that turns mint while running, then 14px night-ink nodes (92% fill, a hairline outline instead of a border, so they never read as cards inside the card) for Question, Claude agent, Tools and PostgreSQL side by side, and Answer. Each node has a line icon in a small square, a bold label, a muted sub-label and a status light. Curved 1px connectors split from the agent and merge into Answer. A run lights one step at a time: the node rises 2px with a violet outline, halo and spinner, then turns to a mint check; its outgoing connectors fill in Soft Violet with a glowing white packet travelling along them; the finished Answer node takes the violet glow. A pill caption below narrates the step ("3/4 · It calls tools and queries PostgreSQL"). It plays only while visible; reduced motion shows the finished run. The right body carries a static status badge, the large title, a three-column fact row divided by hairlines, tags and a muted private-code note.
 
 ### Inputs / Fields
 - **Style:** 14px corners, 45% night-ink fill, strong hairline, Text Bright Manrope 1rem, placeholder #7a7c92, labels in Text Body 0.85rem above.

@@ -19,7 +19,7 @@
         "rule": "cramped-padding",
         "value": "*",
         "files": [
-          "harshpatel-main/index.html"
+          "index.html"
         ],
         "createdAt": "2026-10-07T09:30:42.854Z",
         "reason": "Finish reviewer: false positive, ul.earlier border-top is the list's top hairline rule and rows carry 1rem padding"
@@ -28,7 +28,7 @@
         "rule": "dark-glow",
         "value": "*",
         "files": [
-          "harshpatel-main/index.html"
+          "index.html"
         ],
         "createdAt": "2026-10-08T04:24:47.208Z",
         "reason": "User pinned the Dribbble reference (shots/27276445) whose world is glowing glass, iridescent type, halos, grid floor and silk art"
@@ -37,7 +37,7 @@
         "rule": "gradient-text",
         "value": "*",
         "files": [
-          "harshpatel-main/index.html"
+          "index.html"
         ],
         "createdAt": "2026-10-08T04:24:47.372Z",
         "reason": "User pinned the Dribbble reference (shots/27276445) whose world is glowing glass, iridescent type, halos, grid floor and silk art"
@@ -46,7 +46,7 @@
         "rule": "radial-halo",
         "value": "*",
         "files": [
-          "harshpatel-main/index.html"
+          "index.html"
         ],
         "createdAt": "2026-10-08T04:24:47.533Z",
         "reason": "User pinned the Dribbble reference (shots/27276445) whose world is glowing glass, iridescent type, halos, grid floor and silk art"
@@ -55,7 +55,7 @@
         "rule": "codex-grid-background",
         "value": "*",
         "files": [
-          "harshpatel-main/index.html"
+          "index.html"
         ],
         "createdAt": "2026-10-08T04:24:47.695Z",
         "reason": "User pinned the Dribbble reference (shots/27276445) whose world is glowing glass, iridescent type, halos, grid floor and silk art"
@@ -64,7 +64,7 @@
         "rule": "repeating-stripes-gradient",
         "value": "*",
         "files": [
-          "harshpatel-main/index.html"
+          "index.html"
         ],
         "createdAt": "2026-10-08T04:24:47.850Z",
         "reason": "User pinned the Dribbble reference (shots/27276445) whose world is glowing glass, iridescent type, halos, grid floor and silk art"
@@ -73,7 +73,7 @@
         "rule": "pulsing-dot",
         "value": "*",
         "files": [
-          "harshpatel-main/index.html"
+          "index.html"
         ],
         "createdAt": "2026-10-08T04:24:47.999Z",
         "reason": "Agent decision: the dots are the assistant's real searching/loading state, shown only while a query runs"

@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static single-file HTML/CSS/JS (`harshpatel-main/index.html`), assets in `harshpatel-main/Images/`. No build step. Existing codebase answers the stack.
+Static single-file HTML/CSS/JS (`index.html` at the repository root), assets in `Images/`. No build step. Hosted on GitHub Pages from repo `HarshPatel-02/harshpatel`: `main` is the live site (https://harshpatel-02.github.io/harshpatel/), `dev` holds all work.
 
 ## Users
 
@@ -41,9 +41,10 @@ Earlier skills: Flutter, Dart, Android/Java, Firebase, SQLite, ASP.NET, SQL Serv
   - *Finance agent*: AI agent built with Python, FastAPI and Claude; calls tools for calculations and data lookups; data in PostgreSQL. It does NOT use n8n, MongoDB, RAG or LangGraph (user, 2026-10-08).
   - *Document Q&A chatbot (RAG)*: answers questions from client documents; built in n8n with MongoDB Atlas Vector Search and LLM APIs.
   - No client names, links or metrics for either.
-- **Crop Recommendation System** (ML + Flask), GitHub + live demo on Render, `Images/crop.png`.
-- Earlier projects: Decoze (Flutter), Chit Chat (Android), Online Laptop Selling (ASP.NET), Cargo Car Parking (PHP), with screenshots in `Images/`.
-- Education: MCA, Marwadi University, 2023–2025, 6.67 CGPA. BCA, R.P. Bhalodia College, 2020–2023, 7.53 CGPA.
+  - On the site: the finance agent is the featured panel with an animated workflow (Question → Claude agent → Tools + PostgreSQL → Answer); the RAG chatbot is the first project card.
+- **Crop Recommendation System** (ML + Flask), GitHub + live demo on Render, logo `Images/icons/crop-t.png`.
+- Earlier projects: Decoze (Flutter), Chit Chat (Android), Online Laptop Selling (ASP.NET), Cargo Car Parking (PHP), with logos in `Images/icons/`.
+- Education: MCA, Marwadi University, 2023–2025, 6.67 CGPA. BCA, R.P. Bhalodia College, 2020–2023, 7.53 CGPA. CGPA is hidden on the site (user choice).
 - Contact: patelharsh02102@gmail.com, github.com/HarshPatel-02, linkedin.com/in/harsh-patel-9b638a262.
 - **Absent, never fabricate:** finance bot metrics, accuracy figures, client names, user counts, testimonials, certifications.
 
