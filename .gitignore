@@ -1,0 +1,25 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Impeccable design tool: local caches, live-mode files, review screenshots
+# (.impeccable/config.json, design.json and surfaces/ are kept on purpose)
+.impeccable/hook.cache.json
+.impeccable/hook.pending.json
+.impeccable/config.local.json
+.impeccable/live/
+.impeccable/review/
+.impeccable/questions/
+.impeccable-live.json
+.impeccable-live/
