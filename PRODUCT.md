@@ -36,7 +36,7 @@ Earlier skills: Flutter, Dart, Android/Java, Firebase, SQLite, ASP.NET, SQL Serv
 
 ## Evidence on Hand
 
-- **Experience:** AI Developer, Kode Creators, 2024 – Present. Flutter Developer, Meetmighty IT Solutions, Jan – Jul 2024.
+- **Experience (confirmed against the user's resume, 2026-10-09):** AI Developer, Kode Creators Private Limited, Sep 2025 – Present. Flutter Developer Trainee, Meetmighty IT Solutions, Feb – Jul 2025 (6-month training: auth, REST APIs, Firebase, MobX, Shared Preferences/SQLite, Material Design; e-commerce mini-project and a live taxi booking app). Flutter Developer, Meetmighty IT Solutions, Jan – Jul 2024 (user confirmed both Meetmighty roles are real).
 - **Latest work (two separate private Kode Creators client projects, per user 2026-10-08):**
   - *Finance agent*: AI agent built with Python, FastAPI and Claude; calls tools for calculations and data lookups; data in PostgreSQL. It does NOT use n8n, MongoDB, RAG or LangGraph (user, 2026-10-08).
   - *Document Q&A chatbot (RAG)*: answers questions from client documents; built in n8n with MongoDB Atlas Vector Search and LLM APIs.
@@ -44,7 +44,7 @@ Earlier skills: Flutter, Dart, Android/Java, Firebase, SQLite, ASP.NET, SQL Serv
   - On the site: the finance agent is the featured panel with an animated workflow (Question → Claude agent → Tools + PostgreSQL → Answer); the RAG chatbot is the first project card.
 - **Crop Recommendation System** (ML + Flask), GitHub + live demo on Render, logo `Images/icons/crop-t.png`.
 - Earlier projects: Decoze (Flutter), Chit Chat (Android), Online Laptop Selling (ASP.NET), Cargo Car Parking (PHP), with logos in `Images/icons/`.
-- Education: MCA, Marwadi University, 2023–2025, 6.67 CGPA. BCA, R.P. Bhalodia College, 2020–2023, 7.53 CGPA. CGPA is hidden on the site (user choice).
+- Education: MCA, Marwadi University (NAAC A+), 2023–2025, 6.14 CGPA. BCA, R.P. Bhalodia College (Saurashtra University, NAAC A+), 2020–2023, 7.53 CGPA. CGPA is hidden on the site (user choice).
 - Contact: patelharsh02102@gmail.com, github.com/HarshPatel-02, linkedin.com/in/harsh-patel-9b638a262.
 - **Absent, never fabricate:** finance bot metrics, accuracy figures, client names, user counts, testimonials, certifications.
 
