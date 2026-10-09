@@ -23,3 +23,6 @@ desktop.ini
 .impeccable/questions/
 .impeccable-live.json
 .impeccable-live/
+
+# Other projects kept in this folder, not part of this repository
+hr-portfolio/
