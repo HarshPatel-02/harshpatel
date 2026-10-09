@@ -44,7 +44,7 @@ Earlier skills: Flutter, Dart, Android/Java, Firebase, SQLite, ASP.NET, SQL Serv
   - On the site: the finance agent is the featured panel with an animated workflow (Question → Claude agent → Tools + PostgreSQL → Answer); the RAG chatbot is the first project card.
 - **Crop Recommendation System** (ML + Flask), GitHub + live demo on Render, logo `Images/icons/crop-t.png`.
 - Earlier projects: Decoze (Flutter), Chit Chat (Android), Online Laptop Selling (ASP.NET), Cargo Car Parking (PHP), with logos in `Images/icons/`.
-- Education: MCA, Marwadi University (NAAC A+), 2023–2025, 6.14 CGPA. BCA, R.P. Bhalodia College (Saurashtra University, NAAC A+), 2020–2023, 7.53 CGPA. CGPA is hidden on the site (user choice).
+- Education: MCA, Marwadi University (NAAC A+), 2023–2025, 6.14 CGPA. BCA, R.P. Bhalodia College (Saurashtra University, NAAC A+), 2020–2023, 7.53 CGPA. CGPA is shown on the education cards (user, 2026-10-09; earlier it was hidden).
 - Contact: patelharsh02102@gmail.com, github.com/HarshPatel-02, linkedin.com/in/harsh-patel-9b638a262.
 - **Absent, never fabricate:** finance bot metrics, accuracy figures, client names, user counts, testimonials, certifications.
 

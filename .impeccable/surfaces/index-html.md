@@ -9,7 +9,7 @@ related_targets: ["404.html"]
 
 Scope: the single-page portfolio. Mode: Experience (portfolio) with a Persuade close: hire / email Harsh, download resume.
 Audience/job: recruiters, hiring managers, tech leads deciding in under a minute whether Harsh ships LLM products.
-Constraints: static single file on GitHub Pages (relative paths, no build, no API keys, no backend: contact form composes a mailto). No invented metrics, clients, stats or testimonials. CGPA hidden. Resume at `resume.pdf` (user supplies). No profile photo exists. Old clip-art logos not used.
+Constraints: static single file on GitHub Pages (relative paths, no build, no API keys, no backend: contact form composes a mailto). No invented metrics, clients, stats or testimonials. CGPA shown on the education cards (MCA 6.14, BCA 7.53). Resume at `resume.pdf` (user supplies). No profile photo exists. Old clip-art logos not used.
 History: v1 dark sidebar (rejected: template, plain). v2 light "AI product launch" (replaced by the user's pinned reference). v3 dark glass (current, tag `v1` on `dev`). The in-page "Ask about my work" assistant and the iridescent gradient were removed at the user's request.
 
 ## Pinned reference (user, 2026-10-08)
