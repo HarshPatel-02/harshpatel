@@ -36,7 +36,7 @@ Earlier skills: Flutter, Dart, Android/Java, Firebase, SQLite, ASP.NET, SQL Serv
 
 ## Evidence on Hand
 
-- **Experience (confirmed against the user's resume, 2026-10-09):** AI Developer, Kode Creators Private Limited, Sep 2025 – Present. Flutter Developer Trainee, Meetmighty IT Solutions, Feb – Jul 2025 (6-month training: auth, REST APIs, Firebase, MobX, Shared Preferences/SQLite, Material Design; e-commerce mini-project and a live taxi booking app). Flutter Developer, Meetmighty IT Solutions, Jan – Jul 2024 (user confirmed both Meetmighty roles are real).
+- **Experience (confirmed against the user's resume, 2026-10-09):** AI Developer, Kode Creators Private Limited, Sep 2025 – Present. Flutter Developer Trainee, Meetmighty IT Solutions, Feb – Jul 2025 (6-month training: auth, REST APIs, Firebase, MobX, Shared Preferences/SQLite, Material Design; e-commerce mini-project and a live taxi booking app). The old portfolio's "Flutter Developer, Meetmighty, Jan – Jul 2024" was a mistake and is removed (user, 2026-10-09); never show it.
 - **Latest work (two separate private Kode Creators client projects, per user 2026-10-08):**
   - *Finance agent*: AI agent built with Python, FastAPI and Claude; calls tools for calculations and data lookups; data in PostgreSQL. It does NOT use n8n, MongoDB, RAG or LangGraph (user, 2026-10-08).
   - *Document Q&A chatbot (RAG)*: answers questions from client documents; built in n8n with MongoDB Atlas Vector Search and LLM APIs.
