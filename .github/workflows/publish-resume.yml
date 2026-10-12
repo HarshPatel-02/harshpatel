@@ -1,0 +1,52 @@
+# When resume.pdf changes on dev, copy it to main so the live site
+# (GitHub Pages, served from main) picks it up automatically.
+name: Publish resume
+
+on:
+  push:
+    branches: [dev]
+    paths: [resume.pdf]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: publish-resume
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Copy resume.pdf from dev
+        run: |
+          git fetch origin dev
+          git checkout origin/dev -- resume.pdf
+
+      - name: Commit and push to main
+        id: push
+        run: |
+          if git diff --cached --quiet; then
+            echo "Resume on main is already up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "HarshPatel-02"
+          git config user.email "142870422+HarshPatel-02@users.noreply.github.com"
+          git commit -m "Publish: updated resume"
+          git push origin main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Rebuild the live site
+        if: steps.push.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages will rebuild from the push."
