@@ -47,6 +47,8 @@ git push                    # GitHub Pages rebuilds the live site in about a min
 git checkout dev
 ```
 
+**Resume updates go live automatically:** replace `resume.pdf`, commit and push to `dev`. The "Publish resume" GitHub Action (`.github/workflows/publish-resume.yml`) copies it to `main` within about a minute. It can also be run by hand from the Actions tab.
+
 Commit as `HarshPatel-02` so GitHub credits the right account (`git config --global user.name "HarshPatel-02"`).
 
 ## Before publishing
