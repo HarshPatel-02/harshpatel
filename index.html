@@ -27,9 +27,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 
     <style>
+        /* Stand-in fonts sized to match Sora and Manrope, so text doesn't jump when the web fonts arrive */
+        @font-face { font-family: 'Sora Fallback'; src: local('Arial'), local('ArialMT'); font-weight: 100 500; size-adjust: 106.6%; ascent-override: 91%; descent-override: 27.2%; line-gap-override: 0%; }
+        @font-face { font-family: 'Sora Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'); font-weight: 600 900; size-adjust: 106.6%; ascent-override: 91%; descent-override: 27.2%; line-gap-override: 0%; }
+        @font-face { font-family: 'Manrope Fallback'; src: local('Arial'), local('ArialMT'); font-weight: 100 500; size-adjust: 103.6%; ascent-override: 102.9%; descent-override: 29%; line-gap-override: 0%; }
+        @font-face { font-family: 'Manrope Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'); font-weight: 600 900; size-adjust: 103.6%; ascent-override: 102.9%; descent-override: 29%; line-gap-override: 0%; }
+
         :root {
             color-scheme: dark;
             --bg: #0a0a12;
@@ -41,8 +47,8 @@
             --stroke: rgba(255, 255, 255, 0.1);
             --stroke-2: rgba(255, 255, 255, 0.2);
             --cyan: #7df3e1;
-            --display: 'Sora', ui-sans-serif, system-ui, sans-serif;
-            --font: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --display: 'Sora', 'Sora Fallback', ui-sans-serif, system-ui, sans-serif;
+            --font: 'Manrope', 'Manrope Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
             --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --gutter: clamp(1rem, 4vw, 2.5rem);
@@ -2921,7 +2927,12 @@
                 bg.globalCompositeOperation = 'source-in';
                 bg.filter = 'none';
                 bg.fillStyle = fill; bg.fillRect(0, 0, W, H);
-                out.forEach((p) => { p.x = p.hx; p.y = p.hy; p.vx = 0; p.vy = 0; p.ph = Math.random() * 6.28; p.sp = 0.6 + Math.random() * 0.9; });
+                const q = (v) => Math.min(255, Math.round(v / 12) * 12);
+                out.forEach((p) => {
+                    p.x = p.hx; p.y = p.hy; p.vx = 0; p.vy = 0; p.ph = Math.random() * 6.28; p.sp = 0.6 + Math.random() * 0.9;
+                    p.fs = `rgb(${q(p.col[0])},${q(p.col[1])},${q(p.col[2])})`;
+                });
+                out.sort((a, b) => (a.fs < b.fs ? -1 : a.fs > b.fs ? 1 : 0));
                 return out;
             };
 
@@ -2953,6 +2964,7 @@
                 }
                 const px = (pointer.x - offX) / scale, py = (pointer.y - offY) / scale - bob;
                 const pulse = reduceMotion ? 1 : 0.65 + 0.35 * Math.sin(time * 2.4);
+                let lastFs = '';
                 for (const p of particles) {
                     if (!reduceMotion) {
                         const dx = p.x - px, dy = p.y - py, d2 = dx * dx + dy * dy;
@@ -2968,7 +2980,8 @@
                     if (p.type === 2 && blink < 1) y = 122 + bob + (p.y - 122) * blink;
                     const drift = reduceMotion ? 0 : Math.sin(time * p.sp + p.ph) * 0.8;
                     const tw = p.type === 0 ? 0.75 + 0.25 * Math.sin(time * 2 * p.sp + p.ph) : p.type === 3 ? pulse : 1;
-                    ctx.fillStyle = `rgba(${p.col[0] | 0},${p.col[1] | 0},${p.col[2] | 0},${(p.a * tw).toFixed(3)})`;
+                    if (p.fs !== lastFs) { ctx.fillStyle = p.fs; lastFs = p.fs; }
+                    ctx.globalAlpha = p.a * tw;
                     ctx.fillRect(p.x + drift - p.r / 2, y - p.r / 2, p.r, p.r);
                 }
                 ctx.globalAlpha = 0.75 * blink;
@@ -2992,9 +3005,11 @@
                 if (!running) draw(0);
             };
 
+            const frameGap = window.innerWidth < 900 ? 32 : 0; // ~30 fps on phones and tablets
+            let lastFrame = 0;
             const loop = (t) => {
                 if (!running) return;
-                draw(t);
+                if (t - lastFrame >= frameGap) { lastFrame = t; draw(t); }
                 requestAnimationFrame(loop);
             };
             const setRunning = () => {
@@ -3004,7 +3019,7 @@
                 if (on) requestAnimationFrame(loop);
             };
 
-            if (canvas.getContext && CanvasRenderingContext2D.prototype.roundRect) {
+            const startRobot = () => {
                 particles = buildShape();
                 resize();
                 window.addEventListener('resize', resize);
@@ -3016,6 +3031,11 @@
                 new IntersectionObserver((en) => { visible = en[0].isIntersecting; setRunning(); }).observe(canvas);
                 document.addEventListener('visibilitychange', setRunning);
                 setRunning();
+            };
+            if (canvas.getContext && CanvasRenderingContext2D.prototype.roundRect) {
+                const whenIdle = (fn) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 1500 }) : setTimeout(fn, 200));
+                if (document.readyState === 'complete') whenIdle(startRobot);
+                else window.addEventListener('load', () => whenIdle(startRobot), { once: true });
             }
 
 
