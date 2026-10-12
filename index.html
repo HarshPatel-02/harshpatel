@@ -318,10 +318,34 @@
             margin-top: 0.875rem;
         }
 
+        /* Once the page scrolls, a dark band fills the gap above the floating bar
+           so content never shows through behind it */
+        .nav-shell::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            top: -0.875rem;
+            height: calc(0.875rem + 4.25rem);
+            background: #0a0a12;
+            box-shadow: 0 0 0 100vmax #0a0a12;
+            clip-path: inset(0 -100vmax);
+            opacity: 0;
+            transition: opacity 0.25s;
+            pointer-events: none;
+        }
+
+        .nav-shell.scrolled::before {
+            opacity: 1;
+        }
+
+        /* Logo left, links centred, actions right */
         .nav {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
             height: 4.25rem;
             padding: 0 0.75rem 0 1.25rem;
             border-radius: 20px;
@@ -329,6 +353,7 @@
         }
 
         .logo {
+            justify-self: start;
             display: inline-flex;
             align-items: center;
             gap: 0.7rem;
@@ -347,7 +372,6 @@
         .nav-links {
             display: flex;
             gap: 0.25rem;
-            margin: 0 auto;
             list-style: none;
         }
 
@@ -369,6 +393,7 @@
         }
 
         .nav-actions {
+            justify-self: end;
             display: flex;
             gap: 0.5rem;
         }
@@ -403,8 +428,12 @@
                 display: none;
             }
 
-            .nav-actions {
-                margin-left: auto;
+            .nav {
+                grid-template-columns: 1fr auto;
+            }
+
+            .nav > nav {
+                display: none;
             }
 
             .menu-btn {
@@ -450,6 +479,10 @@
                 top: 0;
                 margin-top: 0;
                 padding: 0;
+            }
+
+            .nav-shell::before {
+                display: none;
             }
 
             .nav {
@@ -3163,7 +3196,8 @@
 
             /* ---------- Back to top ---------- */
             const toTop = document.getElementById('to-top');
-            const onToTop = () => toTop.classList.toggle('show', window.scrollY > 600);
+            const navShell = document.querySelector('.nav-shell');
+            const onToTop = () => { toTop.classList.toggle('show', window.scrollY > 600); navShell.classList.toggle('scrolled', window.scrollY > 8); };
             window.addEventListener('scroll', onToTop, { passive: true });
             onToTop();
             toTop.addEventListener('click', () => {
